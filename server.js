@@ -253,6 +253,7 @@ const authRoutes = require("./routes/authRoutes");
 const logsRoutes = require("./routes/logsRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
 const summaryRoutes = require("./routes/summaryRoutes");
+const insightsRoutes = require("./routes/insightsRoutes");
 
 /**
  * Mount authentication routes
@@ -273,6 +274,11 @@ app.use("/api/analytics", analyticsRoutes);
  * Mount summary routes
  */
 app.use("/api/summary", summaryRoutes);
+
+/**
+ * Mount AI insights routes
+ */
+app.use("/api/insights", insightsRoutes);
 
 // ============================================================================
 // 404 NOT FOUND MIDDLEWARE
