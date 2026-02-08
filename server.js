@@ -247,11 +247,32 @@ app.get("/api/status", (req, res) => {
 });
 
 /**
- * Routes will be imported and mounted here
- * Example:
- * app.use('/api/users', require('./routes/users'));
- * app.use('/api/auth', require('./routes/auth'));
+ * Import and mount route modules
  */
+const authRoutes = require("./routes/authRoutes");
+const logsRoutes = require("./routes/logsRoutes");
+const analyticsRoutes = require("./routes/analyticsRoutes");
+const summaryRoutes = require("./routes/summaryRoutes");
+
+/**
+ * Mount authentication routes
+ */
+app.use("/api/auth", authRoutes);
+
+/**
+ * Mount daily logs routes
+ */
+app.use("/api/logs", logsRoutes);
+
+/**
+ * Mount analytics routes
+ */
+app.use("/api/analytics", analyticsRoutes);
+
+/**
+ * Mount summary routes
+ */
+app.use("/api/summary", summaryRoutes);
 
 // ============================================================================
 // 404 NOT FOUND MIDDLEWARE
